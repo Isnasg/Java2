@@ -30,7 +30,6 @@ public class BookSearchXml {
             List<String> search = getAuthor(doc, xpath);
             System.out.println("Книги автора: " +
                    search.toString());
-
         }
 
         catch (Exception e){
