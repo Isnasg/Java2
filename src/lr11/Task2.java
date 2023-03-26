@@ -1,36 +1,35 @@
 package lr11;
 import java.util.Scanner;
 public class Task2 {
-    public static Scanner in=new Scanner(System.in); //ïåðåìåííàÿ äëÿ ââîäà
-    public static int [] EnterArray(int i, int [] arr) { //ìåòîä ââîäà
-        if (i<0) {return arr;}
+    public static Scanner in=new Scanner(System.in);
+    public static int [] EnterArray(int i, int [] arr) {
+        if (i<0) {
+            return arr;
+        }
         else {
             System.out.print("["+i+"]=");
             int n=in.nextInt();
             arr[i]=n;
-            EnterArray(i-1, arr); //ðåêóðñèÿ
+            EnterArray(i-1, arr);
         }
         return arr;
     }
-    public static void PrintArray (int i, int [] arr) //ìåòîä âûâîäà
+    public static void PrintArray (int i, int [] arr) //метод вывода
     {
         if(i<0) return;
-        else PrintArray(i-1, arr); //ðåêóðñèÿ
+        else PrintArray(i-1, arr); //рекурсия
         System.out.print("[" + (i) + "]=" + arr[i]+" ");
     }
     public static void main(String[] args) {
         try {
-            System.out.println("Ïðîãðàììà ïîçâîëÿåò ââåñòè è âûâåñòè îäíîìåðíûé ìàññèâ öåëûõ ÷èñåë.\n"
-                    + "Äëÿ ââîäà è âûâîäà ìàññèâà èñïîëüçóþòñÿ ðåêóðñèâíûå ìåòîäû âìåñòî öèêëîâ for.");
-            System.out.println("Ââåäèòå äëèíó ìàññèâà:");
-            int size=in.nextInt(); //ââîä äëèíû ìàññèâà
-            int [] array=new int[size]; //ñîçäàíèå ìàññèâà
-            System.out.println("Ââåäèòå ýëåìåíòû ìàññèâà ìåòîäîì ðåêóðñèè:");
+            System.out.println("Длину массива:");
+            int size=in.nextInt(); //ввод длины массива
+            int [] array=new int[size]; //создание массива
+            System.out.println("Введите элементы массива методом рекурсии:");
             array=EnterArray(size-1, array);
-            System.out.println("-------------------------------------------------");
-            System.out.println("âûâîä ìàññèâà ìåòîäîì ðåêóðñèè");
+            System.out.println("вывод массива методом рекурсии");
             PrintArray(size-1, array);
         }
-        catch (Exception error) { System.out.println("Ïðè îáðàáîòêå äàííûõ ïðîèçîøëà îøèáêà!"); } //îáðàáîòêà èñêëþ÷åíèÿ
+        catch (Exception error) { System.out.println("При обработке данных произошла ошибка!"); } //обработка исключения
     }
 }
