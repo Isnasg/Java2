@@ -8,14 +8,14 @@ public class Task3 {
                 System.out.print("["+i+"]=");
                 int n = in.nextInt();
                 arr[i] = n;
-                EntArray(i-1, arr); //рекурсия
+                EntArray(i-1, arr);
             }
             return arr;
         }
         public static void PrintArray (int i, int [] arr)
         {
             if(i<0) return;
-            else PrintArray(i-1, arr); //рекурсия
+            else PrintArray(i-1, arr);
             System.out.print("[" + (i) + "]=" + arr[i]+" ");
         }
 
@@ -30,6 +30,6 @@ public class Task3 {
                 System.out.println("вывод массива методом рекурсии");
                 PrintArray(size-1, array);
             }
-            catch (Exception error) { System.out.println("При обработке данных произошла ошибка!"); } //обработка исключения
+            catch (Exception error) { System.out.println("При обработке данных произошла ошибка!"); }
         }
     }
